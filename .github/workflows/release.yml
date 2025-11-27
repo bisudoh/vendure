@@ -35,5 +35,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/YOUR_IMAGE_NAME:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/YOUR_IMAGE_NAME:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/vendure:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/vendure:${{ github.sha }}
