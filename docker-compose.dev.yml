@@ -1,0 +1,33 @@
+services:
+  server:
+    image: sudohash/vendure
+    restart: always
+    container_name: vendure-server
+    ports:
+      - 5060:3000
+    command: ["npm", "run", "start:server"]
+    volumes:
+      - app:/usr/src/app
+    environment:
+      DB_HOST: postgres.example.com
+      DB_PORT: 5432
+      DB_NAME: vendure
+      DB_USERNAME: postgres
+      DB_PASSWORD: example
+
+  worker:
+    image: sudohash/vendure
+    restart: always
+    container_name: vendure-worker
+    command: ["npm", "run", "start:worker"]
+    volumes:
+      - app:/usr/src/app
+    environment:
+      DB_HOST: postgres.example.com
+      DB_PORT: 5432
+      DB_NAME: vendure
+      DB_USERNAME: postgres
+      DB_PASSWORD: example
+
+volumes:
+  app:
