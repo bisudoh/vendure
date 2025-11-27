@@ -36,7 +36,7 @@ RUN npm install --production
 # --------------------------------------------------
 # 6. Bootstrap Lerna packages
 # --------------------------------------------------
-RUN lerna bootstrap
+#RUN lerna bootstrap
 
 COPY package.json package-lock.json ./
 RUN npm install -g lerna && npm install --production
